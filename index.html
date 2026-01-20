@@ -48,6 +48,11 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Smooth image loading */
+        img {
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="text-gray-800 bg-white">
@@ -87,9 +92,9 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- Added a background image placeholder here to 'flood' the first view -->
+    <!-- Using Pollinations.ai for generated imagery -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden bg-image-overlay" 
-             style="background-image: url('https://placehold.co/1920x1080/166534/white?text=Upload:+Hero+Image+(Food+Table+or+Party)');">
+             style="background-image: url('https://image.pollinations.ai/prompt/festive%20nigerian%20party%20food%20table%20spread%20small%20chops?width=1920&height=1080&nologo=true&seed=1');">
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="max-w-4xl mx-auto fade-in-up">
@@ -142,8 +147,7 @@
                             <p class="mt-5 text-base text-gray-500">
                                 Our Kunu, Masa, and Small Chops are prepared in a strictly clean environment. Taste the freshness in every bite.
                             </p>
-                            <!-- Small image to flood visuals -->
-                            <img src="https://placehold.co/300x150/e8f5e9/1b5e20?text=Hygiene+Standard" class="mt-4 rounded w-full h-32 object-cover">
+                            <img src="https://image.pollinations.ai/prompt/clean%20professional%20chef%20kitchen%20food%20prep?width=400&height=250&nologo=true&seed=2" class="mt-4 rounded w-full h-40 object-cover">
                         </div>
                     </div>
                 </div>
@@ -161,8 +165,7 @@
                             <p class="mt-5 text-base text-gray-500">
                                 High-quality textures and vibrant colors. We source the best fabrics for your fashion needs.
                             </p>
-                            <!-- Small image to flood visuals -->
-                            <img src="https://placehold.co/300x150/fff3e0/e65100?text=Fabric+Stacks" class="mt-4 rounded w-full h-32 object-cover">
+                            <img src="https://image.pollinations.ai/prompt/stacks%20of%20vibrant%20folded%20fabrics?width=400&height=250&nologo=true&seed=3" class="mt-4 rounded w-full h-40 object-cover">
                         </div>
                     </div>
                 </div>
@@ -180,8 +183,7 @@
                             <p class="mt-5 text-base text-gray-500">
                                 Professional vinyl flooring installation with attention to detail. We transform spaces into modern masterpieces.
                             </p>
-                            <!-- Small image to flood visuals -->
-                            <img src="https://placehold.co/300x150/e3f2fd/0d47a1?text=Flooring+Tools" class="mt-4 rounded w-full h-32 object-cover">
+                            <img src="https://image.pollinations.ai/prompt/vinyl%20flooring%20installation%20tools%20professional?width=400&height=250&nologo=true&seed=4" class="mt-4 rounded w-full h-40 object-cover">
                         </div>
                     </div>
                 </div>
@@ -198,7 +200,7 @@
                 <!-- Card 1 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="h-48 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x400/FF8C00/white?text=Small+Chops+Combo" alt="Small Chops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://image.pollinations.ai/prompt/Nigerian%20small%20chops%20puff%20puff%20samosa?width=400&height=400&nologo=true&seed=5" alt="Small Chops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Small Chops</h3>
@@ -209,7 +211,7 @@
                 <!-- Card 2 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="h-48 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x400/FFF8DC/333?text=Fresh+Masa" alt="Masa" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://image.pollinations.ai/prompt/Nigerian%20Masa%20rice%20cakes%20delicious?width=400&height=400&nologo=true&seed=6" alt="Masa" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Masa (Rice Cake)</h3>
@@ -220,7 +222,7 @@
                 <!-- Card 3 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="h-48 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x400/8B4513/white?text=Iced+Kunu" alt="Kunu" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://image.pollinations.ai/prompt/Bottles%20of%20creamy%20Kunu%20drink%20cold?width=400&height=400&nologo=true&seed=7" alt="Kunu" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Kunu Drinks</h3>
@@ -231,7 +233,7 @@
                 <!-- Card 4 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
                     <div class="h-48 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x400/DC143C/white?text=Event+Platters" alt="Party Orders" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <img src="https://image.pollinations.ai/prompt/Large%20party%20food%20platter%20nigerian%20catering?width=400&height=400&nologo=true&seed=8" alt="Party Orders" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Party Orders</h3>
@@ -243,7 +245,7 @@
     </section>
 
     <!-- Fabrics Section - With Background Image -->
-    <section id="fabrics" class="py-20 bg-image-overlay" style="background-image: url('https://placehold.co/1920x800/800080/FFFFFF?text=Upload:+Fabric+Shop+Background');">
+    <section id="fabrics" class="py-20 bg-image-overlay" style="background-image: url('https://image.pollinations.ai/prompt/African%20fabric%20shop%20interior%20colorful?width=1920&height=800&nologo=true&seed=9');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
                 <div class="bg-white/95 p-8 rounded-xl shadow-2xl backdrop-blur-sm">
@@ -275,17 +277,17 @@
                 </div>
                 <!-- Extra images grid for fabrics -->
                 <div class="mt-10 lg:mt-0 grid grid-cols-2 gap-4">
-                    <img class="rounded-lg shadow-lg w-full h-48 object-cover transform translate-y-4" src="https://placehold.co/400x400/indigo/white?text=Ankara" alt="Fabrics">
-                    <img class="rounded-lg shadow-lg w-full h-48 object-cover" src="https://placehold.co/400x400/pink/white?text=Lace" alt="Fabrics">
-                    <img class="rounded-lg shadow-lg w-full h-48 object-cover transform translate-y-4" src="https://placehold.co/400x400/teal/white?text=Plain" alt="Fabrics">
-                    <img class="rounded-lg shadow-lg w-full h-48 object-cover" src="https://placehold.co/400x400/gold/white?text=Silk" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover transform translate-y-4" src="https://image.pollinations.ai/prompt/ankara%20fabric%20pattern%20colorful?width=400&height=400&nologo=true&seed=10" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover" src="https://image.pollinations.ai/prompt/lace%20fabric%20texture%20elegant?width=400&height=400&nologo=true&seed=11" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover transform translate-y-4" src="https://image.pollinations.ai/prompt/plain%20textile%20fabric%20roll?width=400&height=400&nologo=true&seed=12" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover" src="https://image.pollinations.ai/prompt/silk%20fabric%20shiny?width=400&height=400&nologo=true&seed=13" alt="Fabrics">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skilled Jobs Section (Vinyl Flooring) - With Background -->
-    <section id="services" class="py-20 bg-image-overlay" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ffffff?text=Upload:+Luxury+Living+Room+Floor');">
+    <section id="services" class="py-20 bg-image-overlay" style="background-image: url('https://image.pollinations.ai/prompt/luxury%20modern%20living%20room%20wood%20floor?width=1920&height=1080&nologo=true&seed=14');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div class="text-center mb-12">
                 <h2 class="text-3xl font-extrabold sm:text-4xl text-white drop-shadow-md">Skilled Services</h2>
@@ -297,11 +299,11 @@
                 <div class="w-full md:w-3/4 lg:w-2/3 bg-gray-900/90 backdrop-blur rounded-2xl p-8 border border-gray-700 shadow-2xl">
                     <div class="flex flex-col md:flex-row gap-8 items-center">
                         <div class="w-full md:w-1/2">
-                            <img src="https://placehold.co/600x400/5D4037/white?text=Vinyl+Installation+Closeup" alt="Vinyl Flooring Work" class="w-full rounded-lg object-cover h-64 shadow-lg">
+                            <img src="https://image.pollinations.ai/prompt/vinyl%20flooring%20plank%20installation%20close%20up?width=600&height=400&nologo=true&seed=15" alt="Vinyl Flooring Work" class="w-full rounded-lg object-cover h-64 shadow-lg">
                             <div class="flex gap-2 mt-2">
-                                <img src="https://placehold.co/200x150/8D6E63/white?text=Wood+Finish" class="w-1/3 rounded object-cover h-20">
-                                <img src="https://placehold.co/200x150/A1887F/white?text=Stone+Finish" class="w-1/3 rounded object-cover h-20">
-                                <img src="https://placehold.co/200x150/BCAAA4/white?text=Tile+Finish" class="w-1/3 rounded object-cover h-20">
+                                <img src="https://image.pollinations.ai/prompt/wood%20texture%20close%20up?width=200&height=150&nologo=true&seed=16" class="w-1/3 rounded object-cover h-20">
+                                <img src="https://image.pollinations.ai/prompt/stone%20floor%20texture?width=200&height=150&nologo=true&seed=17" class="w-1/3 rounded object-cover h-20">
+                                <img src="https://image.pollinations.ai/prompt/tile%20floor%20pattern?width=200&height=150&nologo=true&seed=18" class="w-1/3 rounded object-cover h-20">
                             </div>
                         </div>
                         <div class="w-full md:w-1/2 text-left">
@@ -334,22 +336,22 @@
             <!-- Increased grid items to 12 for "flood" effect -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Row 1 -->
-                <img src="https://placehold.co/400x400/FF5722/white?text=Samosa+Close+Up" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/795548/white?text=Completed+Floor+1" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/9C27B0/white?text=Ankara+Stack" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/FFC107/333?text=Puff+Puff+Tray" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/plate%20of%20samosa%20and%20spring%20rolls?width=400&height=400&nologo=true&seed=19" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/finished%20vinyl%20floor%20room?width=400&height=400&nologo=true&seed=20" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/pile%20of%20ankara%20fabrics?width=400&height=400&nologo=true&seed=21" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/basket%20of%20puff%20puff?width=400&height=400&nologo=true&seed=22" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
                 
                 <!-- Row 2 -->
-                <img src="https://placehold.co/400x400/009688/white?text=Kunu+Bottles+Ice" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/607D8B/white?text=Office+Flooring" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/E91E63/white?text=Lace+Material" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/8BC34A/white?text=Masa+Serving" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/kunu%20aya%20drink%20bottle?width=400&height=400&nologo=true&seed=23" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/modern%20office%20floor%20vinyl?width=400&height=400&nologo=true&seed=24" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/purple%20lace%20fabric?width=400&height=400&nologo=true&seed=25" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/served%20masa%20with%20yaji?width=400&height=400&nologo=true&seed=26" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
                 
                 <!-- Row 3 -->
-                <img src="https://placehold.co/400x400/3F51B5/white?text=Customer+Order" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/CDDC39/333?text=Spring+Rolls" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/9E9E9E/white?text=Floor+Texture" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
-                <img src="https://placehold.co/400x400/673AB7/white?text=Fabric+Pattern" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/happy%20customer%20holding%20food?width=400&height=400&nologo=true&seed=27" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/golden%20spring%20rolls?width=400&height=400&nologo=true&seed=28" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/wood%20floor%20texture?width=400&height=400&nologo=true&seed=29" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://image.pollinations.ai/prompt/african%20textile%20pattern?width=400&height=400&nologo=true&seed=30" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
             </div>
             <div class="text-center mt-8">
                 <button class="text-green-600 font-semibold border-b-2 border-green-600 pb-1 hover:text-green-800 transition">Load More Photos</button>
@@ -358,14 +360,14 @@
     </section>
 
     <!-- Testimonials with Background and Avatars -->
-    <section class="py-20 bg-image-overlay" style="background-image: url('https://placehold.co/1920x600/333333/666666?text=Upload:+Happy+Crowd+Background');">
+    <section class="py-20 bg-image-overlay" style="background-image: url('https://image.pollinations.ai/prompt/happy%20crowd%20at%20nigerian%20wedding?width=1920&height=600&nologo=true&seed=31');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 class="text-3xl font-bold text-white mb-12">What Our Customers Say</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Review 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
                     <div class="flex justify-center -mt-12 mb-4">
-                        <img src="https://placehold.co/100x100/green/white?text=A" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                        <img src="https://image.pollinations.ai/prompt/portrait%20smiling%20nigerian%20woman%20headshot?width=100&height=100&nologo=true&seed=32" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
                     </div>
                     <div class="mb-4 text-green-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -377,7 +379,7 @@
                 <!-- Review 2 -->
                 <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
                      <div class="flex justify-center -mt-12 mb-4">
-                        <img src="https://placehold.co/100x100/blue/white?text=C" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                        <img src="https://image.pollinations.ai/prompt/portrait%20smiling%20nigerian%20man%20headshot?width=100&height=100&nologo=true&seed=33" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
                     </div>
                     <div class="mb-4 text-green-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -389,7 +391,7 @@
                 <!-- Review 3 -->
                 <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
                      <div class="flex justify-center -mt-12 mb-4">
-                        <img src="https://placehold.co/100x100/purple/white?text=G" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                        <img src="https://image.pollinations.ai/prompt/portrait%20smiling%20nigerian%20woman%20glasses?width=100&height=100&nologo=true&seed=34" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
                     </div>
                     <div class="mb-4 text-green-500">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -431,7 +433,12 @@
                     </div>
                     
                     <div class="mt-10">
-                        <img src="https://placehold.co/300x100/222/555?text=Payment+Partners+Logos" class="rounded opacity-50">
+                         <!-- Placeholder logo text instead of image to keep it clean, or use font awesome -->
+                         <div class="flex space-x-4 opacity-50">
+                             <i class="fab fa-cc-visa text-3xl"></i>
+                             <i class="fab fa-cc-mastercard text-3xl"></i>
+                             <i class="fas fa-money-bill-wave text-3xl"></i>
+                         </div>
                     </div>
                 </div>
 
