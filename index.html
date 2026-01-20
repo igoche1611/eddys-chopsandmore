@@ -19,10 +19,28 @@
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-        .hero-pattern {
-            background-color: #f3f4f6;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2316a34a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        /* Utility for background images with overlay */
+        .bg-image-overlay {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
+        .bg-image-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: 1;
+        }
+        .bg-image-overlay > * {
+            position: relative;
+            z-index: 2;
+        }
+        
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out;
         }
@@ -69,33 +87,31 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden hero-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto fade-in-up">
-                <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+    <!-- Added a background image placeholder here to 'flood' the first view -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden bg-image-overlay" 
+             style="background-image: url('https://placehold.co/1920x1080/166534/white?text=Upload:+Hero+Image+(Food+Table+or+Party)');">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="max-w-4xl mx-auto fade-in-up">
+                <span class="bg-green-600/90 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide border border-green-400">
                     Serving Excellence Daily
                 </span>
-                <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                    Authentic <span class="text-green-600">Flavors</span> & <br>
-                    Premium <span class="text-orange-500">Vinyl Flooring</span>
+                <h1 class="mt-6 text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl drop-shadow-md">
+                    Authentic <span class="text-green-400">Flavors</span> & <br>
+                    Premium <span class="text-orange-400">Vinyl Flooring</span>
                 </h1>
-                <p class="mt-6 text-xl text-gray-600 max-w-2xl mx-auto">
+                <p class="mt-6 text-xl text-gray-100 max-w-2xl mx-auto drop-shadow-sm font-medium">
                     From the sweetest Masa and spicy Small Chops to premium Fabrics and expert Vinyl Flooring services. We are your one-stop solution for quality lifestyle needs.
                 </p>
                 <div class="mt-10 flex justify-center gap-4">
-                    <a href="#contact" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    <a href="#contact" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-900 bg-white hover:bg-green-50 md:py-4 md:text-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
                         Order Food / Fabrics
                     </a>
-                    <a href="#services" class="px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 md:py-4 md:text-lg shadow-sm hover:shadow-md transition">
+                    <a href="#services" class="px-8 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 md:py-4 md:text-lg shadow-sm hover:shadow-md transition">
                         Hire for Flooring
                     </a>
                 </div>
             </div>
-        </div>
-        
-        <!-- Abstract Background Image -->
-        <div class="absolute top-0 left-0 w-full h-full z-0 opacity-10 pointer-events-none">
-             <img src="https://placehold.co/1920x1080/green/white?text=Naija+Pattern+Background" alt="Background" class="w-full h-full object-cover">
         </div>
     </section>
 
@@ -115,7 +131,7 @@
             <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 <!-- Feature 1 -->
                 <div class="pt-6">
-                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border border-gray-100 shadow-sm hover:shadow-md transition">
                         <div class="-mt-6">
                             <div>
                                 <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
@@ -126,13 +142,15 @@
                             <p class="mt-5 text-base text-gray-500">
                                 Our Kunu, Masa, and Small Chops are prepared in a strictly clean environment. Taste the freshness in every bite.
                             </p>
+                            <!-- Small image to flood visuals -->
+                            <img src="https://placehold.co/300x150/e8f5e9/1b5e20?text=Hygiene+Standard" class="mt-4 rounded w-full h-32 object-cover">
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
                 <div class="pt-6">
-                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border border-gray-100 shadow-sm hover:shadow-md transition">
                         <div class="-mt-6">
                             <div>
                                 <span class="inline-flex items-center justify-center p-3 bg-orange-500 rounded-md shadow-lg">
@@ -143,13 +161,15 @@
                             <p class="mt-5 text-base text-gray-500">
                                 High-quality textures and vibrant colors. We source the best fabrics for your fashion needs.
                             </p>
+                            <!-- Small image to flood visuals -->
+                            <img src="https://placehold.co/300x150/fff3e0/e65100?text=Fabric+Stacks" class="mt-4 rounded w-full h-32 object-cover">
                         </div>
                     </div>
                 </div>
 
                 <!-- Feature 3 -->
                 <div class="pt-6">
-                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                    <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 border border-gray-100 shadow-sm hover:shadow-md transition">
                         <div class="-mt-6">
                             <div>
                                 <span class="inline-flex items-center justify-center p-3 bg-blue-600 rounded-md shadow-lg">
@@ -160,6 +180,8 @@
                             <p class="mt-5 text-base text-gray-500">
                                 Professional vinyl flooring installation with attention to detail. We transform spaces into modern masterpieces.
                             </p>
+                            <!-- Small image to flood visuals -->
+                            <img src="https://placehold.co/300x150/e3f2fd/0d47a1?text=Flooring+Tools" class="mt-4 rounded w-full h-32 object-cover">
                         </div>
                     </div>
                 </div>
@@ -168,15 +190,15 @@
     </section>
 
     <!-- Categories / Offerings Grid -->
-    <section id="food" class="py-16 bg-gray-50">
+    <section id="food" class="py-16 bg-green-50/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Our Delicious Offerings</h2>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <!-- Card 1 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
-                    <div class="h-40 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x300/orange/white?text=Small+Chops" alt="Small Chops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="h-48 w-full overflow-hidden">
+                        <img src="https://placehold.co/400x400/FF8C00/white?text=Small+Chops+Combo" alt="Small Chops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Small Chops</h3>
@@ -186,8 +208,8 @@
 
                 <!-- Card 2 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
-                    <div class="h-40 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x300/f5f5dc/333?text=Masa" alt="Masa" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="h-48 w-full overflow-hidden">
+                        <img src="https://placehold.co/400x400/FFF8DC/333?text=Fresh+Masa" alt="Masa" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Masa (Rice Cake)</h3>
@@ -197,8 +219,8 @@
 
                 <!-- Card 3 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
-                    <div class="h-40 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x300/8B4513/white?text=Kunu+Drinks" alt="Kunu" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="h-48 w-full overflow-hidden">
+                        <img src="https://placehold.co/400x400/8B4513/white?text=Iced+Kunu" alt="Kunu" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Kunu Drinks</h3>
@@ -208,8 +230,8 @@
 
                 <!-- Card 4 -->
                 <div class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden">
-                    <div class="h-40 w-full overflow-hidden">
-                        <img src="https://placehold.co/400x300/red/white?text=Party+Platters" alt="Party Orders" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="h-48 w-full overflow-hidden">
+                        <img src="https://placehold.co/400x400/DC143C/white?text=Event+Platters" alt="Party Orders" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                     </div>
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-bold text-gray-800">Party Orders</h3>
@@ -220,100 +242,159 @@
         </div>
     </section>
 
-    <!-- Fabrics Section -->
-    <section id="fabrics" class="py-16 bg-white">
+    <!-- Fabrics Section - With Background Image -->
+    <section id="fabrics" class="py-20 bg-image-overlay" style="background-image: url('https://placehold.co/1920x800/800080/FFFFFF?text=Upload:+Fabric+Shop+Background');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
-                <div>
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="bg-white/95 p-8 rounded-xl shadow-2xl backdrop-blur-sm">
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
                         Exquisite Fabrics Collection
                     </h2>
-                    <p class="mt-3 max-w-3xl text-lg text-gray-500">
+                    <p class="mt-4 text-lg text-gray-600">
                         Whether you are looking for Ankara, Lace, or plain materials for your next Owambe or casual wear, we have a variety of patterns and textures.
                     </p>
                     <div class="mt-8 space-y-4">
                         <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">High Quality Prints</span>
+                            <i class="fas fa-check-circle text-purple-600 mr-3 text-xl"></i>
+                            <span class="text-gray-800 font-medium">High Quality Prints</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Affordable Yards</span>
+                            <i class="fas fa-check-circle text-purple-600 mr-3 text-xl"></i>
+                            <span class="text-gray-800 font-medium">Affordable Yards</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-3"></i>
-                            <span class="text-gray-700">Delivery Nationwide</span>
+                            <i class="fas fa-check-circle text-purple-600 mr-3 text-xl"></i>
+                            <span class="text-gray-800 font-medium">Delivery Nationwide</span>
                         </div>
                     </div>
                     <div class="mt-8">
-                         <a href="#contact" class="text-green-600 font-semibold hover:text-green-500">
-                            View Catalog <i class="fas fa-arrow-right ml-1"></i>
+                         <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-700 hover:bg-purple-800 shadow-md transition">
+                            View Catalog <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
-                <div class="mt-10 lg:mt-0 relative">
-                    <img class="rounded-lg shadow-lg w-full" src="https://placehold.co/600x400/purple/white?text=Fabrics+Collection+Display" alt="Fabrics">
+                <!-- Extra images grid for fabrics -->
+                <div class="mt-10 lg:mt-0 grid grid-cols-2 gap-4">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover transform translate-y-4" src="https://placehold.co/400x400/indigo/white?text=Ankara" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover" src="https://placehold.co/400x400/pink/white?text=Lace" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover transform translate-y-4" src="https://placehold.co/400x400/teal/white?text=Plain" alt="Fabrics">
+                    <img class="rounded-lg shadow-lg w-full h-48 object-cover" src="https://placehold.co/400x400/gold/white?text=Silk" alt="Fabrics">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skilled Jobs Section (Vinyl Flooring) -->
-    <section id="services" class="py-16 bg-gray-900 text-white">
+    <!-- Skilled Jobs Section (Vinyl Flooring) - With Background -->
+    <section id="services" class="py-20 bg-image-overlay" style="background-image: url('https://placehold.co/1920x1080/2c3e50/ffffff?text=Upload:+Luxury+Living+Room+Floor');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold sm:text-4xl">Skilled Services</h2>
-                <p class="mt-4 text-gray-400">Professional Vinyl Flooring for Homes and Offices</p>
+                <h2 class="text-3xl font-extrabold sm:text-4xl text-white drop-shadow-md">Skilled Services</h2>
+                <p class="mt-4 text-gray-200 text-lg">Professional Vinyl Flooring for Homes and Offices</p>
             </div>
 
             <!-- Centered Single Service -->
             <div class="flex justify-center">
-                <div class="w-full md:w-2/3 lg:w-1/2 bg-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-blue-500 transition">
-                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-border-all text-white text-xl"></i>
+                <div class="w-full md:w-3/4 lg:w-2/3 bg-gray-900/90 backdrop-blur rounded-2xl p-8 border border-gray-700 shadow-2xl">
+                    <div class="flex flex-col md:flex-row gap-8 items-center">
+                        <div class="w-full md:w-1/2">
+                            <img src="https://placehold.co/600x400/5D4037/white?text=Vinyl+Installation+Closeup" alt="Vinyl Flooring Work" class="w-full rounded-lg object-cover h-64 shadow-lg">
+                            <div class="flex gap-2 mt-2">
+                                <img src="https://placehold.co/200x150/8D6E63/white?text=Wood+Finish" class="w-1/3 rounded object-cover h-20">
+                                <img src="https://placehold.co/200x150/A1887F/white?text=Stone+Finish" class="w-1/3 rounded object-cover h-20">
+                                <img src="https://placehold.co/200x150/BCAAA4/white?text=Tile+Finish" class="w-1/3 rounded object-cover h-20">
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 text-left">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-6">
+                                <i class="fas fa-border-all text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-white">Vinyl Flooring Installation</h3>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                We specialize in high-quality Vinyl flooring installation. Whether it's Luxury Vinyl Plank (LVP) or sheet vinyl, we ensure a durable, water-resistant, and aesthetic finish for your floors. Perfect for Nigerian homes.
+                            </p>
+                            <ul class="text-gray-400 space-y-2 mb-6">
+                                <li><i class="fas fa-check text-blue-500 mr-2"></i> Water Resistant</li>
+                                <li><i class="fas fa-check text-blue-500 mr-2"></i> Durable & Long-lasting</li>
+                                <li><i class="fas fa-check text-blue-500 mr-2"></i> Modern Aesthetics</li>
+                            </ul>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Request Quote
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Vinyl Flooring Installation</h3>
-                    <p class="text-gray-400 mb-6">
-                        We specialize in high-quality Vinyl flooring installation. Whether it's Luxury Vinyl Plank (LVP) or sheet vinyl, we ensure a durable, water-resistant, and aesthetic finish for your floors.
-                    </p>
-                    <img src="https://placehold.co/600x350/333/white?text=Vinyl+Flooring+Example" alt="Vinyl Flooring Work" class="w-full rounded-lg object-cover h-64 opacity-90 hover:opacity-100 transition">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio / Gallery Grid -->
+    <!-- Portfolio / Gallery Grid - FLOODED WITH IMAGES -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Our Recent Work</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Food+Platter" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Fabric+Pattern" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Vinyl+Floor" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Vinyl+Texture" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Kunu+Bottles" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Masa+Dish" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Event+Catering" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
-                <img src="https://placehold.co/300x300/e2e8f0/64748b?text=Happy+Client" class="w-full h-full object-cover rounded-lg hover:opacity-75 transition cursor-pointer">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Gallery: Our Recent Work</h2>
+            <!-- Increased grid items to 12 for "flood" effect -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Row 1 -->
+                <img src="https://placehold.co/400x400/FF5722/white?text=Samosa+Close+Up" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/795548/white?text=Completed+Floor+1" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/9C27B0/white?text=Ankara+Stack" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/FFC107/333?text=Puff+Puff+Tray" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                
+                <!-- Row 2 -->
+                <img src="https://placehold.co/400x400/009688/white?text=Kunu+Bottles+Ice" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/607D8B/white?text=Office+Flooring" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/E91E63/white?text=Lace+Material" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/8BC34A/white?text=Masa+Serving" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                
+                <!-- Row 3 -->
+                <img src="https://placehold.co/400x400/3F51B5/white?text=Customer+Order" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/CDDC39/333?text=Spring+Rolls" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/9E9E9E/white?text=Floor+Texture" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+                <img src="https://placehold.co/400x400/673AB7/white?text=Fabric+Pattern" class="w-full h-48 object-cover rounded-lg hover:opacity-75 transition cursor-pointer shadow-sm">
+            </div>
+            <div class="text-center mt-8">
+                <button class="text-green-600 font-semibold border-b-2 border-green-600 pb-1 hover:text-green-800 transition">Load More Photos</button>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-16 bg-green-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12">What Our Customers Say</h2>
+    <!-- Testimonials with Background and Avatars -->
+    <section class="py-20 bg-image-overlay" style="background-image: url('https://placehold.co/1920x600/333333/666666?text=Upload:+Happy+Crowd+Background');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl font-bold text-white mb-12">What Our Customers Say</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <p class="text-gray-600 italic">"The small chops were the highlight of my wedding! Hot and fresh."</p>
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
+                    <div class="flex justify-center -mt-12 mb-4">
+                        <img src="https://placehold.co/100x100/green/white?text=A" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                    </div>
+                    <div class="mb-4 text-green-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"The small chops were the highlight of my wedding! Hot and fresh. Eddy's service is top notch."</p>
                     <h4 class="mt-4 font-bold text-gray-900">- Amina Y.</h4>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <p class="text-gray-600 italic">"My living room looks completely different after the vinyl flooring job. Very professional."</p>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
+                     <div class="flex justify-center -mt-12 mb-4">
+                        <img src="https://placehold.co/100x100/blue/white?text=C" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                    </div>
+                    <div class="mb-4 text-green-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"My living room looks completely different after the vinyl flooring job. Very professional and neat."</p>
                     <h4 class="mt-4 font-bold text-gray-900">- Chinedu O.</h4>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <p class="text-gray-600 italic">"The fabrics I bought were exactly as described. Good quality material."</p>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300">
+                     <div class="flex justify-center -mt-12 mb-4">
+                        <img src="https://placehold.co/100x100/purple/white?text=G" class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                    </div>
+                    <div class="mb-4 text-green-500">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic">"The fabrics I bought were exactly as described. Good quality material and fast delivery."</p>
                     <h4 class="mt-4 font-bold text-gray-900">- Grace A.</h4>
                 </div>
             </div>
@@ -321,7 +402,7 @@
     </section>
 
     <!-- Call to Action / Footer -->
-    <footer id="contact" class="bg-gray-900 text-gray-300">
+    <footer id="contact" class="bg-gray-900 text-gray-300 border-t-4 border-green-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
@@ -344,18 +425,22 @@
                     </div>
 
                     <div class="mt-8 flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook text-2xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-2xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fab fa-facebook text-3xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fab fa-instagram text-3xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition transform hover:scale-110"><i class="fab fa-twitter text-3xl"></i></a>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <img src="https://placehold.co/300x100/222/555?text=Payment+Partners+Logos" class="rounded opacity-50">
                     </div>
                 </div>
 
                 <!-- Contact Form Placeholder -->
-                <div class="bg-gray-800 p-6 rounded-lg">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
                     <form onsubmit="event.preventDefault(); alert('Message sent! (This is a demo)');">
                         <div class="mb-4">
                             <label class="block text-sm font-medium mb-2">Name</label>
-                            <input type="text" class="w-full px-3 py-2 bg-gray-700 rounded border border-gray-600 focus:outline-none focus:border-green-500 text-white" placeholder="Your Name">
+                            <input type="text" class="w-full px-3 py-2 bg-gray-700 rounded border border-gray-600 focus:outline-none focus:border-green-500 text-white placeholder-gray-400" placeholder="Your Name">
                         </div>
                         <div class="mb-4">
                             <label class="block text-sm font-medium mb-2">Service Needed</label>
@@ -367,9 +452,9 @@
                         </div>
                         <div class="mb-4">
                             <label class="block text-sm font-medium mb-2">Message</label>
-                            <textarea rows="3" class="w-full px-3 py-2 bg-gray-700 rounded border border-gray-600 focus:outline-none focus:border-green-500 text-white" placeholder="Tell us more..."></textarea>
+                            <textarea rows="3" class="w-full px-3 py-2 bg-gray-700 rounded border border-gray-600 focus:outline-none focus:border-green-500 text-white placeholder-gray-400" placeholder="Tell us more..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded transition">
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded transition shadow-md">
                             Send Message
                         </button>
                     </form>
